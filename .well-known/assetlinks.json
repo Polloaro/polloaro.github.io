@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.prigen.puntify",
+    "sha256_cert_fingerprints": ["D8:F3:A7:EB:90:E0:6E:BF:04:BA:D7:4C:74:E5:E7:C0:31:9D:9A:63:B5:EA:51:8E:49:DD:00:45:95:F7:68:30"]
+  }
+}]
