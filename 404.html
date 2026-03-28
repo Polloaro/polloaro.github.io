@@ -1,0 +1,105 @@
+<!-- Archivo: 404.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Únete a Puntify!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8E2DE2;
+            --secondary: #4A00E0;
+            --accent: #FFAB00;
+            --bg: #0F0C29;
+            --text: #ffffff;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #0F0C29, #302B63, #24243E);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 500px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .logo { width: 120px; height: 120px; margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--primary)); }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        p { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 40px; }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(142, 45, 226, 0.3);
+            margin: 10px;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(142, 45, 226, 0.5); background: var(--secondary); }
+        .btn-store { background: #000; border: 1px solid rgba(255,255,255,0.2); }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://polloaro.github.io/icon.png" alt="Puntify Logo" class="logo">
+        <div id="room-invite" class="hidden">
+            <h1>¡Te han invitado!</h1>
+            <p>Alguien quiere jugar contigo en Puntify. Instala la app para unirte a la sala inmediatamente.</p>
+        </div>
+        <div id="general-404">
+            <h1>Puntify</h1>
+            <p>Lleva la diversión al siguiente nivel. Compite con amigos y domina las tablas de puntuación.</p>
+        </div>
+        <div id="download-links">
+            <a href="#" id="android-btn" class="btn btn-store hidden">Descargar en Play Store</a>
+            <a href="#" id="ios-btn" class="btn btn-store hidden">Descargar en App Store</a>
+            <a href="https://polloaro.github.io" class="btn">Saber más</a>
+        </div>
+    </div>
+    <script>
+        const path = window.location.pathname;
+        if (path.includes('/room/')) {
+            document.getElementById('room-invite').classList.remove('hidden');
+            document.getElementById('general-404').classList.add('hidden');
+        }
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isAndroid) {
+            document.getElementById('android-btn').classList.remove('hidden');
+            // document.getElementById('android-btn').href = "URL_DE_TU_PLAY_STORE";
+        } else if (isIOS) {
+            document.getElementById('ios-btn').classList.remove('hidden');
+            // document.getElementById('ios-btn').href = "URL_DE_TU_APP_STORE";
+        } else {
+            document.getElementById('android-btn').classList.remove('hidden');
+            document.getElementById('ios-btn').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
