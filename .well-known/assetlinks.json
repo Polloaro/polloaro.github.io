@@ -3,6 +3,9 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.prigen.puntiverse",
-    "sha256_cert_fingerprints": ["D8:F3:A7:EB:90:E0:6E:BF:04:BA:D7:4C:74:E5:E7:C0:31:9D:9A:63:B5:EA:51:8E:49:DD:00:45:95:F7:68:30"]
+    "sha256_cert_fingerprints": [
+      "D8:F3:A7:EB:90:E0:6E:BF:04:BA:D7:4C:74:E5:E7:C0:31:9D:9A:63:B5:EA:51:8E:49:DD:00:45:95:F7:68:30",
+      "27:E1:66:40:E2:7C:D7:79:6D:6C:5D:62:9E:1C:65:03:80:6C:8A:A5:C4:8B:BC:DA:6C:61:DC:8A:B6:D9:D3:4B"
+    ]
   }
 }]
